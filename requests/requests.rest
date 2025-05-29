@@ -1,0 +1,61 @@
+### Get all blogs
+GET http://localhost:3003/api/blogs
+Accept: application/json
+
+### Get a single blog by ID
+GET http://localhost:3003/api/blogs/67d3ef924b58fdcab7ee5a0c
+Accept: application/json
+
+### Create a new blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1c2luZW4yIiwiaWQiOiI2N2ZlNWE0ODU2Y2FmZDkyYWVkNTNjODEiLCJpYXQiOjE3NDQ3MjYzNzQsImV4cCI6MTc0NDcyOTk3NH0.ZxglNJKpbTxo4r3mbsIXuY-OWFOsGW-SWOA1ZgXZ_eE
+
+{
+  "title": "My Second Blog",
+  "author": "John Doe",
+  "url": "https://example.com",
+  "likes": 5
+}
+
+### Delete a blog by ID
+DELETE http://localhost:3003/api/blogs/67fe5a9556cafd92aed53c93
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1c2luZW4yIiwiaWQiOiI2N2ZlNWE0ODU2Y2FmZDkyYWVkNTNjODEiLCJpYXQiOjE3NDQ3MjI1MTMsImV4cCI6MTc0NDcyNjExM30.2fhqsiNOJ9Cz8B7Jbi7gyIoeiUe3BOD7A4dI2q0PXdo
+
+### Update a blog by ID
+PUT http://localhost:3003/api/blogs/67c4af7e2f78b1f510fa4023
+Content-Type: application/json
+
+{
+  "title": "Updated Blog Title",
+  "author": "John Doe",
+  "url": "https://example.com",
+  "likes": 10
+}
+
+### Get a non-existing blog (should return 404)
+GET http://localhost:3003/api/blogs/000000000000000000000000
+Accept: application/json
+
+### Successful user creation
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "susinen2",
+  "name": "Roman Volkov2",
+  "password": "securepassword"
+}
+
+### Retrieve all users
+GET http://localhost:3003/api/users
+Accept: application/json
+
+### Login
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "susinen2",
+  "password": "securepassword"
+}
